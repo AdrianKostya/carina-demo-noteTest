@@ -1,5 +1,8 @@
 package com.qaprosoft.carina.demo;
 
+import com.qaprosoft.carina.demo.mobile.gui.pages.common.notes.LearnPageBase;
+import com.qaprosoft.carina.demo.mobile.gui.pages.common.notes.MainPageBase;
+import com.qaprosoft.carina.demo.mobile.gui.pages.common.notes.modal.TypeOfDocPageBase;
 import com.zebrunner.agent.core.annotation.TestLabel;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;
@@ -16,6 +19,7 @@ import com.qaprosoft.carina.demo.mobile.gui.pages.common.WebViewPageBase;
 import com.qaprosoft.carina.demo.mobile.gui.pages.common.WelcomePageBase;
 import com.qaprosoft.carina.demo.utils.MobileContextUtils;
 import com.qaprosoft.carina.demo.utils.MobileContextUtils.View;
+import org.testng.asserts.SoftAssert;
 
 
 public class MobileSampleTest extends AbstractTest implements IMobileUtils {
@@ -83,6 +87,29 @@ public class MobileSampleTest extends AbstractTest implements IMobileUtils {
         Assert.assertTrue(uiElements.isFemaleRadioButtonSelected(), "Female radio button was not selected!");
         uiElements.clickOnOtherRadioButton();
         Assert.assertTrue(uiElements.isOthersRadioButtonSelected(), "Others radio button was not selected!");
+    }
+
+    @Test(description = "JIRA#DEMO-0011")
+    @MethodOwner(owner = "akostya")
+    @TestLabel(name = "feature", value = {"mobile", "regression"})
+    public void createDoc(){
+        SoftAssert softAssert = new SoftAssert();
+        LearnPageBase learnPageBase = initPage(getDriver(), LearnPageBase.class);
+        if(learnPageBase.isAllowAcesPhotosBtnPresent()){
+            learnPageBase.choseAllowAccessPhotos();
+            softAssert.assertTrue(learnPageBase.isWelcomeArrowPresent(), "Learning, Next arrow is not present");
+            learnPageBase.clickWelcomeArrow();
+            softAssert.assertTrue(learnPageBase.isWelcomeSkipBtnPresent(), "Learning, skip btn is not present");
+            learnPageBase.clickWelcomeSkipBtn();
+        }
+            MainPageBase mainPageBase = initPage(getDriver(), MainPageBase.class);
+            softAssert.assertTrue(mainPageBase.isPageOpened());
+            TypeOfDocPageBase typeOfDocPageBase = mainPageBase.createNewDoc();
+            softAssert.assertTrue(typeOfDocPageBase.isPageOpened());
+            typeOfDocPageBase.choseTextTypeOfDoc();
+
+
+
     }
 
 }
