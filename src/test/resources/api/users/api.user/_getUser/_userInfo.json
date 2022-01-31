@@ -1,0 +1,66 @@
+{
+  "results": [
+    {
+      "gender": "female",
+      "name": {
+        "title": "Ms",
+        "first": "Anne-Jet",
+        "last": "Luiting"
+      },
+      "location": {
+        "street": {
+          "number": 633,
+          "name": "Bosboomhof"
+        },
+        "city": "Sint Annen",
+        "state": "Noord-Brabant",
+        "country": "Netherlands",
+        "postcode": 16734,
+        "coordinates": {
+          "latitude": "46.1281",
+          "longitude": "10.3655"
+        },
+        "timezone": {
+          "offset": "+9:00",
+          "description": "Tokyo, Seoul, Osaka, Sapporo, Yakutsk"
+        }
+      },
+      "email": "anne-jet.luiting@example.com",
+      "login": {
+        "uuid": "07ce13c8-1240-4bb5-bd7e-6111b3888721",
+        "username": "tinygorilla203",
+        "password": "iron",
+        "salt": "ktbRRto1",
+        "md5": "b55ef4b579b992c6ef26e99875ddc10a",
+        "sha1": "53ae550eee721a2f2b2410635112739379cedfa0",
+        "sha256": "35ea7cd95e4fe4899a21f779342d458e54e43edad66903de2d922b7a342ae0dc"
+      },
+      "dob": {
+        "date": "1948-05-28T14:33:17.353Z",
+        "age": 74
+      },
+      "registered": {
+        "date": "2003-06-26T23:33:27.666Z",
+        "age": 19
+      },
+      "phone": "(255)-541-1675",
+      "cell": "(026)-631-5895",
+      "id": {
+        "name": "BSN",
+        "value": "72927380"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/66.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/66.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/66.jpg"
+      },
+      "nat": "NL"
+    }
+  ],
+  "info": {
+    "seed": "1629134e57ad33c0",
+    "results": 1,
+    "page": 1,
+    "version": "1.3"
+  }
+}
